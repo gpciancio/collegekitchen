@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
+import './index.css';
 import axios from 'axios';
 import YouTubeIframe from './YoutubeIframe';
 // import YouTube from './YouTube';
 import cook from './cook';
+import SplashPage from './SplashPage';
+import { Button } from 'react-bootstrap';
+import { formControlsText } from 'react-bootstrap';
+import { FieldGroup } from 'react-bootstrap';
+
 
 class App extends Component {
   constructor(props){
@@ -128,44 +133,50 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+        <SplashPage />
+        <div className="splashpage"></div>
+        <YouTubeIframe />
+        <div className="ingredientinput">
         <form onSubmit={ this.handleSubmit }>
           <label>
           Enter Ingredient:
-          <input type="text" value={ this.state.value } onChange={ this.handleChange } />
+          <input id="formControlsText" placeholder="Enter Ingredients One at a Time" type="text" value={ this.state.value } onChange={ this.handleChange } />
           </label>
         </form>
-          <button onClick={ () => this.searchRecipes( this ) }>Search for Recipe</button>
-          <button onClick={ () => this.clearSearch( this ) }>Clear Search</button>
+
+          <Button bsStyle="primary" bsSize="large" onClick={ () => this.searchRecipes( this ) }>Search for Recipe</Button>
+          <Button bsStyle="primary" bsSize="large" onClick={ () => this.clearSearch( this ) }>Clear Search</Button>
+
+          </div>
         <ul className="media-list">
         {
           this.state.recipes.map( ( recipe ) => {
             if( recipe.videoURL ) {
               return (
               <div>
-                <li className="media">
+              <div className="media-border">
+
+                <span className="media">
                   <div className="media-left">
                     <a href={ recipe.url }>{ recipe.name }</a>
                     <img className='media-object' src="" alt=""></img>
                   </div>
-                </li>
-                <div className="media-body"></div>
+                </span>
+                <span className="media-body" ></span>
                   <h4 className="media-heading">{ recipe.ingredients }</h4>
-
-                    <iframe id="player" type="text/html" width="640" height="390"
+                    <iframe class="media-right" id="player" type="text/html" width="320" height="195"
                       src={ recipe.videoURL }></iframe>
-
                 </div>
 
-                );
-            }
 
+                </div>
+                );
+              }
             })
          }
         </ul>
         <div id="weather" className="weather">
 
-        <YouTubeIframe />
         <cook />
         </div>
       </div>

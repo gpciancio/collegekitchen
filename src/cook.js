@@ -26,7 +26,7 @@ class cook extends React.Component {
         <li class="media">
           <div class="media-left">
             <a href="">
-              <img class="media-object" src="..." alt="..."></img>
+              <img class="media-object" src="..." alt=""></img>
             </a>
           </div>
           <div class="media-body">

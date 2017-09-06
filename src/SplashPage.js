@@ -1,3 +1,33 @@
-<div class="page-header">
-    <h1>Cooking Videos by the Pros! <small>This content will set you up with the skills to cook any of the recipes you find</small></h1>
-    </div>
+import React, { Component } from 'react';
+import './App.css';
+
+class SplashPage extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="navbar">
+          <div className="navtitle">College Kitchen
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+  )}
+}
+
+
+export default SplashPage;
+
+
+
+// <button classNameName="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">          <span classNameName="navbar-toggler-icon"></span>
+        // </button>
