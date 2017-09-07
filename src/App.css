@@ -84,8 +84,7 @@ background-color: #777677;
   margin-top: 15em;
   background-image: url('./brothersgreen.png');
   height: 25vh;
-  widows: 100vw;
-  background-repeat: no-repeat;
+  margin-left: -120px;
 }
 
 .largelink {

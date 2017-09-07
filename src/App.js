@@ -28,8 +28,6 @@ class App extends Component {
     this.clearSearch = this.clearSearch.bind(this);
   }
 
-
-
   handleSubmit(event) {
       this.state.ingredientParams.push(this.state.value);
       event.preventDefault();
