@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './index.css';
 import axios from 'axios';
 import YouTubeIframe from './YoutubeIframe';
-// import YouTube from './YouTube';
-import cook from './cook';
 import SplashPage from './SplashPage';
 import { Button } from 'react-bootstrap';
 import { formControlsText } from 'react-bootstrap';
@@ -132,32 +130,33 @@ class App extends Component {
 
   render() {
     return (
+      <div>
       <div className="App gradientbackground">
         <div className="centertitle splashpage welcometext ingredientdiv">College Kitchen
           <div className="subtitle">
           Video Recipes
           </div>
-        <div className="subtitle">
-          Learn
-        </div>
-        <div className="subtitle">
-          Search
-        </div>
-        <div className="subtitle">
-          Cook
+        <Button bsStyle="default" bsSize="large" className="subtitle">
+          <a href="#learn">Learn</a>
+        </Button><br></br>
+        <Button bsStyle="default" bsSize="large" className="subtitle">
+            <a href="#search">Search</a>
+        </Button>
         </div>
         </div>
-        <div className=" centertitle">
+        <div className="fullpage">
+        <a name="search"></a>
+        <div className="gradientbackground centertitle">
         <form onSubmit={ this.handleSubmit }>
-          <label className="gradientbackground searchlabel">
+          <label className="gradientbackground searchtitle">
           Video Recipe Search
-          <input className="inputbox centertitle" id="formControlsText" placeholder="Enter Ingredients One at a Time" type="text" value={ this.state.value } onChange={ this.handleChange } />
+          <input className="inputbox centertitle " id="formControlsText" placeholder="Enter Ingredients One at a Time" type="text" value={ this.state.value } onChange={ this.handleChange } />
           </label>
         </form>
 
           <Button bsStyle="primary" bsSize="large" onClick={ () => this.searchRecipes( this ) }>Search for Recipes</Button>
           <Button bsStyle="primary" bsSize="large" onClick={ () => this.clearSearch( this ) }>Clear Search</Button>
-
+          </div>
           </div>
         <div className="centertitle gradientbackground media-list">
         {
@@ -167,7 +166,7 @@ class App extends Component {
               return (
               <div>
               <div className="centertitle media-border largelink">
-
+                <div>Check out the Recipes and Videos below!</div>
                 <span className="media">
                   <div className="media-left ">
                     <a href={ recipe.url } target="_blank">{ recipe.name }</a>
@@ -184,13 +183,10 @@ class App extends Component {
               }
             })
          }
+         <a name="learn"></a>
          <div className="brothersgreentitle">
          </div>
          <YouTubeIframe />
-        </div>
-        <div id="weather" className="weather">
-
-        <cook />
         </div>
       </div>
     );

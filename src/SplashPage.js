@@ -14,8 +14,6 @@ class SplashPage extends Component {
         <div className="navbar">
           <div className="navtitle">College Kitchen
 
-
-
           </div>
         </div>
       </div>
@@ -26,8 +24,3 @@ class SplashPage extends Component {
 
 
 export default SplashPage;
-
-
-
-// <button classNameName="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">          <span classNameName="navbar-toggler-icon"></span>
-        // </button>

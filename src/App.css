@@ -33,12 +33,12 @@ background-color: #777677;
 .inputbox {
  width: 100%;
  padding: 12px 20px;
- margin: 8px 0;
  display: inline-block;
  border: 1px solid #ccc;
  border-radius: 4px;
  box-sizing: border-box;
- color: blue !important;
+ font-size: .5em !important;
+
 
 }
 .ingredientdiv {
@@ -50,7 +50,6 @@ background-color: #777677;
   color: white;
   font-size: 11.5em;
   align-content: center;
-
 }
 
 .centertitle {
@@ -59,23 +58,30 @@ background-color: #777677;
 }
 
 .subtitle {
-  font-size: .6em;
+  font-size: .4em;
   font-weight: normal !important;
+  color: white;
+  background-color: transparent;
+}
+
+.searchtitle {
+  font-size: 3em;
+  font-family: 'Londrina Shadow', cursive;
+  padding-top: 1em;
 }
 
 .searchlabel {
   text-align: center;
   color: rgb(47, 111,168);
   font-weight: bold;
-  font-family: 'Roboto', sans-serif;
-  font-size: 3em;
+  font-size: 1.5em;
   padding-bottom: .75em;
   border-radius: 10px;
 }
 
 .brothersgreentitle {
   background-size: cover;
-
+  margin-top: 15em;
   background-image: url('./brothersgreen.png');
   height: 25vh;
   widows: 100vw;
@@ -102,4 +108,21 @@ background-color: #777677;
 
 .boxshadow {
     box-shadow: 10px 10px 5px #888888;
+}
+.button {
+  background-color: transparent !important;
+  color: white;
+}
+
+.fullpage {
+  height: 50vh;
+}
+
+.greentext {
+  font-family: 'Londrina Shadow', cursive;
+  color: black;
+  font-size: 2em;
+  align-content: center;
+  padding-bottom: 1em;
+  font-weight: bold;
 }
