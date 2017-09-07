@@ -132,49 +132,62 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <SplashPage />
-        <div className="splashpage"></div>
-        <YouTubeIframe />
-        <div className="ingredientinput">
+      <div className="App gradientbackground">
+        <div className="centertitle splashpage welcometext ingredientdiv">College Kitchen
+          <div className="subtitle">
+          Video Recipes
+          </div>
+        <div className="subtitle">
+          Learn
+        </div>
+        <div className="subtitle">
+          Search
+        </div>
+        <div className="subtitle">
+          Cook
+        </div>
+        </div>
+        <div className=" centertitle">
         <form onSubmit={ this.handleSubmit }>
-          <label>
-          Enter Ingredient:
-          <input id="formControlsText" placeholder="Enter Ingredients One at a Time" type="text" value={ this.state.value } onChange={ this.handleChange } />
+          <label className="gradientbackground searchlabel">
+          Video Recipe Search
+          <input className="inputbox centertitle" id="formControlsText" placeholder="Enter Ingredients One at a Time" type="text" value={ this.state.value } onChange={ this.handleChange } />
           </label>
         </form>
 
-          <Button bsStyle="primary" bsSize="large" onClick={ () => this.searchRecipes( this ) }>Search for Recipe</Button>
+          <Button bsStyle="primary" bsSize="large" onClick={ () => this.searchRecipes( this ) }>Search for Recipes</Button>
           <Button bsStyle="primary" bsSize="large" onClick={ () => this.clearSearch( this ) }>Clear Search</Button>
 
           </div>
-        <ul className="media-list">
+        <div className="centertitle gradientbackground media-list">
         {
           this.state.recipes.map( ( recipe ) => {
             if( recipe.videoURL ) {
+
               return (
               <div>
-              <div className="media-border">
+              <div className="centertitle media-border largelink">
 
                 <span className="media">
-                  <div className="media-left">
-                    <a href={ recipe.url }>{ recipe.name }</a>
+                  <div className="media-left ">
+                    <a href={ recipe.url } target="_blank">{ recipe.name }</a>
                     <img className='media-object' src="" alt=""></img>
                   </div>
                 </span>
                 <span className="media-body" ></span>
-                  <h4 className="media-heading">{ recipe.ingredients }</h4>
-                    <iframe class="media-right" id="player" type="text/html" width="320" height="195"
+
+                    <iframe frameborder="1" className="boxshadow centertitle" id="player" type="text/html" width="1000" height="610"
                       src={ recipe.videoURL }></iframe>
                 </div>
-
-
                 </div>
                 );
               }
             })
          }
-        </ul>
+         <div className="brothersgreentitle">
+         </div>
+         <YouTubeIframe />
+        </div>
         <div id="weather" className="weather">
 
         <cook />

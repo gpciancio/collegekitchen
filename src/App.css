@@ -3,13 +3,12 @@ background-color: #777677;
 }
 
 .navtitle {
-  height: 3em;
+  height: 2em;
   background-color: #777677;
   font-family: 'Londrina Shadow', cursive;
   color: #0f1823;
-  font-size: 5em;
-  margin-right: 50%;
-  margin-left: 50%;
+  font-size: 10em;
+
 }
 
 .media-border {
@@ -23,12 +22,84 @@ background-color: #777677;
   height: 100vh;
   width: 100vw;
   background-repeat: no-repeat;
-  background-image: url("https://static.pexels.com/photos/298926/woman-kitchen-man-everyday-life-298926.jpeg");
+  background-image:   url('./cooking.jpeg');
 
 }
 
 .ingredientinput {
   background-color: #777677;
   height: 20em;
-  
+}
+.inputbox {
+ width: 100%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ display: inline-block;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-sizing: border-box;
+ color: blue !important;
+
+}
+.ingredientdiv {
+  margin-right: auto;
+  margin-left: auto;
+}
+.welcometext {
+  font-family: 'Londrina Shadow', cursive;
+  color: white;
+  font-size: 11.5em;
+  align-content: center;
+
+}
+
+.centertitle {
+  text-align: center;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: .6em;
+  font-weight: normal !important;
+}
+
+.searchlabel {
+  text-align: center;
+  color: rgb(47, 111,168);
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 3em;
+  padding-bottom: .75em;
+  border-radius: 10px;
+}
+
+.brothersgreentitle {
+  background-size: cover;
+
+  background-image: url('./brothersgreen.png');
+  height: 25vh;
+  widows: 100vw;
+  background-repeat: no-repeat;
+}
+
+.largelink {
+  font-size: 3vw;
+  width: 640px;
+  display: inline;
+  /*float: left;*/
+}
+
+.gradientbackground {
+  background: rgba(226,226,226,1);
+  background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 51%, rgba(219,219,219,1) 67%, rgba(254,254,254,1) 100%);
+
+  background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 51%, rgba(219,219,219,1) 67%, rgba(254,254,254,1) 100%);
+  background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 51%, rgba(219,219,219,1) 67%, rgba(254,254,254,1) 100%);
+  background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 51%, rgba(219,219,219,1) 67%, rgba(254,254,254,1) 100%);
+  background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(209,209,209,1) 51%, rgba(219,219,219,1) 67%, rgba(254,254,254,1) 100%);
+
+}
+
+.boxshadow {
+    box-shadow: 10px 10px 5px #888888;
 }
