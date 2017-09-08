@@ -60,6 +60,7 @@ background-color: #777677;
   font-weight: normal !important;
   color: white;
   background-color: transparent;
+  opacity: .2%;
 }
 
 .searchtitle {
@@ -137,16 +138,18 @@ background: rgba(226,226,226,1);
   font-size: 4em;
 
 }
-.button.btn.btn-lg.btn-primary {
+/*.button.btn.btn-lg.btn-primary {
   padding-top: 10em !important;
-}
+}*/
 a {
   font-family: 'Londrina Shadow', cursive !important;
   text-decoration: none;
+
 }
 
 .no-underline {
   text-decoration: none !important;
+  opacity: .2%;
 }
 
 .button-text {
