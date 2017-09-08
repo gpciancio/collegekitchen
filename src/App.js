@@ -32,14 +32,15 @@ class App extends Component {
       this.state.ingredientParams.push(this.state.value);
       event.preventDefault();
       this.setState({ value: '' });
+      console.log();
   }
 
-  searchRecipes( event, param ) {
-
+  searchRecipes( ) {
+    console.log("in searchrecipes");
     this.getSampleRecipe( this.state.ingredientParams );
 
   }
-  clearSearch(event) {
+  clearSearch() {
     this.setState( {ingredientParams: [], recipes: [], recipe_ids: []});
     console.log( 'STATE', this.state);
   }
@@ -50,6 +51,7 @@ class App extends Component {
   }
 
   getSampleRecipe( ingredientParams ) {
+    console.log("in getSampleRecipe");
     var urlExtension = '';
     ingredientParams.forEach( ( ingredient ) => urlExtension = urlExtension + `&allowedIngredient[]=${ingredient}`  )
 
@@ -58,11 +60,15 @@ class App extends Component {
 
       var matches = response.data.matches;
       var recipe_ids = matches.slice(0, this.max_recipes).map( match => match.id );
+      var recipes = [...this.state.recipes];
+
       recipe_ids.forEach( ( id ) => {
         var recipeObject = {};
         recipeObject['id'] = id
-        this.state.recipes.push( recipeObject );
+        recipes.push( recipeObject );
       });
+
+      this.setState({ recipes: recipes })
 
       this.setState({ recipe_ids: recipe_ids },
         () => {
@@ -94,6 +100,7 @@ class App extends Component {
               // recipeObject['name'] = name
               // recipes.push( recipeObject );
               // recipeObject['ingredients'] = matches[0].ingredients;
+
               this.setState({ recipes: recipes })
               console.log( 'RECIPES', this.state.recipes);
               console.log( 'STATE AFTER UPDATE', this.state);
@@ -128,21 +135,21 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
       <div className="App gradientbackground">
         <div className="centertitle splashpage welcometext ingredientdiv">College Kitchen
-          <div className="subtitle">
-          Video Recipes
+          <div className="subtitle"><br></br>
+          Click to Watch & Search Video Recipes
           </div>
-        <Button bsStyle="default" bsSize="large" className="subtitle">
-          <a href="#learn">Learn</a>
+        <Button bsStyle="default" bsSize="large" className=" subtitle">
+          <a className="no-underline" href="#learn">Learn</a>
         </Button><br></br>
-        <Button bsStyle="default" bsSize="large" className="subtitle">
-            <a href="#search">Search</a>
+        <Button bsStyle="default" bsSize="large" className=" subtitle">
+            <a className="no-underline" href="#search">Search</a>
         </Button>
         </div>
         </div>
-        <div className="fullpage">
+        <div className="grey-background fullpage">
         <a name="search"></a>
         <div className="gradientbackground centertitle">
         <form onSubmit={ this.handleSubmit }>
@@ -151,12 +158,25 @@ class App extends Component {
           <input className="inputbox centertitle " id="formControlsText" placeholder="Enter Ingredients One at a Time" type="text" value={ this.state.value } onChange={ this.handleChange } />
           </label>
         </form>
-
-          <Button bsStyle="primary" bsSize="large" onClick={ () => this.searchRecipes( this ) }>Search for Recipes</Button>
-          <Button bsStyle="primary" bsSize="large" onClick={ () => this.clearSearch( this ) }>Clear Search</Button>
+          <br></br>
+          <Button className="button-text" Style="primary" bsSize="large" onClick={ () => this.searchRecipes( this ) }>Search for Recipes</Button>
+          <Button className="button-text" Style="primary" bsSize="large" onClick={ () => this.clearSearch( this ) }>Clear Search</Button>
           </div>
           </div>
+          {
+            this.state.ingredientParams.map((ingredient) => {
+              return (
+              <div className="grey-background">
+                <div className="grey-background button-text ingredient-pills">
+                  {ingredient}
+                </div>
+              </div>
+              )
+            })
+          }
         <div className="centertitle gradientbackground media-list">
+        <div className="grey-background checkout-recipes">Check out the Recipes and Videos below!</div>
+
         {
           this.state.recipes.map( ( recipe ) => {
             if( recipe.videoURL ) {
@@ -164,7 +184,6 @@ class App extends Component {
               return (
               <div>
               <div className="centertitle media-border largelink">
-                <div>Check out the Recipes and Videos below!</div>
                 <span className="media">
                   <div className="media-left ">
                     <a href={ recipe.url } target="_blank">{ recipe.name }</a>
