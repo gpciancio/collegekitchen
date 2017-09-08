@@ -7,20 +7,15 @@ class SplashPage extends Component {
     this.state = {
     }
   }
-
   render() {
     return (
       <div>
         <div className="navbar">
           <div className="navtitle">College Kitchen
-
           </div>
         </div>
       </div>
-
-
   )}
 }
-
 
 export default SplashPage;

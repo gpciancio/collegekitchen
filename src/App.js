@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap';
 import { formControlsText } from 'react-bootstrap';
 import { FieldGroup } from 'react-bootstrap';
 
-// 
+//
 class App extends Component {
   constructor(props){
     super(props);
@@ -32,17 +32,14 @@ class App extends Component {
       this.state.ingredientParams.push(this.state.value);
       event.preventDefault();
       this.setState({ value: '' });
-      console.log();
   }
 
   searchRecipes( ) {
-    console.log("in searchrecipes");
     this.getSampleRecipe( this.state.ingredientParams );
 
   }
   clearSearch() {
     this.setState( {ingredientParams: [], recipes: [], recipe_ids: []});
-    console.log( 'STATE', this.state);
   }
 
   handleChange(event) {
@@ -51,7 +48,6 @@ class App extends Component {
   }
 
   getSampleRecipe( ingredientParams ) {
-    console.log("in getSampleRecipe");
     var urlExtension = '';
     ingredientParams.forEach( ( ingredient ) => urlExtension = urlExtension + `&allowedIngredient[]=${ingredient}`  )
 
@@ -95,16 +91,7 @@ class App extends Component {
                   this.getRecipeVideo( recipe );
                 }
               })
-
-              // recipeObject['url'] = url
-              // recipeObject['name'] = name
-              // recipes.push( recipeObject );
-              // recipeObject['ingredients'] = matches[0].ingredients;
-
               this.setState({ recipes: recipes })
-              console.log( 'RECIPES', this.state.recipes);
-              console.log( 'STATE AFTER UPDATE', this.state);
-              // this.getRecipeVideo(name)
             })
             .catch((err) => {
               console.log(err);
@@ -123,16 +110,12 @@ class App extends Component {
   getRecipeVideo(recipe) {
     axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=how+to+cook+${recipe.name}&type=GET&key=AIzaSyCLkyxK-2pRusMpOy3ZrDWRnnq9iE1kpGI`)
     .then( ( response ) => {
-
       recipe['videoURL'] = `http://www.youtube.com/embed/${response.data.items[0].id.videoId}?enablejsapi=1`
-
     })
   .catch( ( err ) => {
     console.log(err);
   });
 }
-
-
   render() {
     return (
       <div className="App">

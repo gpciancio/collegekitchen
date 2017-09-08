@@ -1,6 +1,7 @@
 .grey-background {
   background: rgba(226,226,226,1) !important;
 }
+
 .navbar {
 background-color: #777677;
 }
@@ -11,7 +12,6 @@ background-color: #777677;
   font-family: 'Londrina Shadow', cursive;
   color: #0f1823;
   font-size: 10em;
-
 }
 
 .media-border {
@@ -30,6 +30,7 @@ background-color: #777677;
   background-color: #777677;
   height: 20em;
 }
+
 .inputbox {
  width: 100%;
  padding: 12px ;
@@ -39,10 +40,12 @@ background-color: #777677;
  box-sizing: border-box;
  font-size: .5em !important;
 }
+
 .ingredientdiv {
   margin-right: auto;
   margin-left: auto;
 }
+
 .welcometext {
   font-family: 'Londrina Shadow', cursive;
   color: white;
@@ -91,13 +94,11 @@ background-color: #777677;
   font-size: 3vw;
   width: 640px;
   display: inline;
-  /*float: left;*/
 }
 
 .gradientbackground {
 background-repeat: no-repeat !important;
 background: rgba(226,226,226,1);
-
 }
 
 .boxshadow {
@@ -136,18 +137,16 @@ background: rgba(226,226,226,1);
 .checkout-recipes {
   font-family: 'Londrina Shadow', cursive;
   font-size: 4em;
-
 }
 
 a {
   font-family: 'Londrina Shadow', cursive !important;
   text-decoration: none;
-
 }
 
 .no-underline {
   text-decoration: none !important;
-  opacity: .2%;
+  opacity: .2% !important;
 }
 
 .button-text {
